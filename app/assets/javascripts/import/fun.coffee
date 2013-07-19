@@ -15,23 +15,26 @@ $ ->
     $("#project_#{$(this).attr("target")}").click()
 
 
+  $(window).click (e) ->
+    if $(e.target).closest(".more").size() == 0 && $(e.target).closest(".a-show-project").size() == 0
+      $(".slide").removeClass "active"
+
 
   $(".slide .control").on "click", ->
-    current = $(".slide.active").index()
+    current = parseInt($(".slide.active").attr("index"))
     $root = $(this).closest(".sliders")
     all_count = $root.find(".slide").size()
     $(".slide").removeClass "active"
-
     if $(this).is(".prev")
       if current is 0
-        $root.find(".slide").eq(all_count - 1).addClass "active"
+        $root.find(".slide[index='#{all_count-1}']").addClass "active"
       else
-        $root.find(".slide").eq(current - 1).addClass "active"
+        $root.find(".slide[index='#{current-1}']").addClass "active"
     else if $(this).is(".next")
       if current is all_count - 1
-        $root.find(".slide").eq(0).addClass "active"
+        $root.find(".slide[index='0']").addClass "active"
       else
-        $root.find(".slide").eq(current + 1).addClass "active"
+        $root.find(".slide[index='#{current+1}']").addClass "active"
 
     # if $root.attr("scroll")
     #   $("body").scrollTo $root.find(".slide.active"), 800,

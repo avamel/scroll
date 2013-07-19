@@ -10,10 +10,10 @@
 - line_of_work = LineOfWork.all
 - if line_of_work
   .sliders.line_of_works.cf
-    - line_of_work.each do |line|
+    - line_of_work.each_with_index do |line, index|
       .cf
         %a.d-scroll{ "down" => line == line_of_work.last ? "s-other_line" : "line_of_work_#{line.id+1}", "top" => line == line_of_work.first ? "s-line" : "line_of_work_#{line.id-1}", :id => "line_of_work_#{line.id}"}
-        .block.right.slide{:class => "line_of_work_#{line.id}" }
+        .block.right.slide{:class => "line_of_work_#{line.id}", :index => index }
           %h1= line.title
           = raw line.content
           - if line.popup_content.present?

@@ -22,9 +22,9 @@
   - if projects.present?
     .sliders.block.images.scroll-block.right.projects#scroll3{:style => "margin: 0 8% 0 0;"}
       %ul.cf
-        - projects.each do |project|
+        - projects.each_with_index do |project,index|
 
-          %li.slide.a-show{ :id => "project_#{project.id}" }
+          %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
             = image_tag project.project_images.first.image(:medium) if not project.project_images.blank?
             %span=project.title
             .more.cf

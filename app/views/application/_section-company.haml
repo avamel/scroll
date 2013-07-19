@@ -52,8 +52,8 @@
     .block.right.experts.sliders#scroll2
       %ul
 
-        - experts.each do |ex|
-          %li.slide.a-show
+        - experts.each_with_index do |ex, index|
+          %li.slide.a-show{ :index => index }
             = image_tag ex.avatar(:medium)
             .inline
               %span= ex.name
