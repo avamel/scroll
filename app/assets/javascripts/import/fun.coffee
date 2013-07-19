@@ -202,7 +202,9 @@ $ ->
 
 
 
-
+@setHome = ->
+  $("#s0").click()
+  $(".ui-slider-handle").addClass("ui0")
 
 @setBtnScroll = (top, down) ->
   $("#scroll-btn .up").attr("top",top)

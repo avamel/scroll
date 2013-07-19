@@ -81,6 +81,7 @@ body
   min-width: 800px
   max-width: 1400px
   margin: 0 auto
+  position: relative
 #slider
   z-inedx: 101
   top: -4px
@@ -159,7 +160,7 @@ article
   width: 100%
   left: 0
   padding: 0 18px
-  ul
+  ul.m
     max-width: 1400px
     min-width: 800px
     margin: 0 auto
@@ -181,31 +182,30 @@ article
     &:after
       right: -1px
 
-  li
-    margin: 10px 0 0 0
-    width: 25%
-    float: left
-    text-align: center
-    position: relative
-    list-style: none
-    &.active
-      // &:before
-      //   content: ""
-      //   position: absolute
-      //   height: 14px
-      //   width: 5px
-      //   background-color: #fff
-      //   top: -20px
-      //   left: 49%
-      a
-        text-decoration: none
-        border-bottom: 2px solid
+    li
+      margin: 10px 0 0 0
+      width: 25%
+      float: left
+      text-align: center
+      position: relative
+      list-style: none
+      &.active
+        // &:before
+        //   content: ""
+        //   position: absolute
+        //   height: 14px
+        //   width: 5px
+        //   background-color: #fff
+        //   top: -20px
+        //   left: 49%
+        a
+          text-decoration: none
+          border-bottom: 2px solid
 
-  a
-    color: #FFF
-    font-weight: bold
-
-    font-size: 17px
+    a
+      color: #FFF
+      font-weight: bold
+      font-size: 17px
 
 
 #menu-index
@@ -224,10 +224,11 @@ article
   position: fixed
   top: 44px
   z-index: 23
+  width: 25px
   ul
-    margin-left: -12px
+
   li
-    margin: 0 0 20px 0
+    margin: 0 0 16px 0
     &:hover
       opacity: 0.8
     &:first-child
@@ -497,18 +498,27 @@ article
       font-weight: bold
       margin-bottom: 14px
 
-  .line_of_work_1
+
+
+
+.sliders.line_of_works
+  .block
+    margin: 250px 0
     width: 40%
-    margin: 250px 35% 0 0
-  .line_of_work_2
-    width: 310px
-    margin: 250px 35% 0 0
-  .line_of_work_3
-    width: 50%
-    margin: 250px 26% 0 0
-  .line_of_work_4
-  .line_of_work_5
-  .line_of_work_6
+  .cf
+    &:nth-child(1n)
+      .block
+        width: 40%
+        margin: 250px 35% 0 0
+    &:nth-child(2n)
+      .block
+        width: 310px
+        margin: 250px 35% 0 0
+    &:nth-child(3n)
+      .block
+        width: 50%
+        margin: 250px 26% 0 0
+
 
 
 .projects, .project_general

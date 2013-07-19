@@ -1,6 +1,6 @@
 .main
   #menu.cf
-    %ul
+    %ul.m
       %li#menu-index
         %a.curtain-links#s0{:href => "#section-0"}
       %li
@@ -14,6 +14,11 @@
 
     #slider-block
       #slider
+      - social = StaticBlock.find_by_id 4
+      - if social
+        #social-block
+          #social
+            = raw social.content
 
 
   #scroll-btn
@@ -21,13 +26,8 @@
     %a.down{:href => "#down"} >
 
 
-  - social = StaticBlock.find_by_id 4
-  - if social
-    #social-block
-      #social
-        = raw social.content
 
-  = link_to "HR-Tema", root_url, :id => "logo"
+  = link_to_function "HR-Tema", "setHome();", :id => "logo"
 
 
 %ol.curtains
