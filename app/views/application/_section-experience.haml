@@ -1,6 +1,6 @@
 .cf{:style => "margin: 250px 0 150px 0"}
-  .left#summary3.sf{:style => "width: 320px; margin: 0 0 0 18%;", :target => "scroll3"}
-    - experience = StaticBlock.find_by_id 8
+  .left#summary3.sf{:target => "scroll3"}
+    - experience = get_block("experience")
     - if experience
       .block.inline{:style => " width: 320px"}
         %h1=experience.title
@@ -9,7 +9,7 @@
 
     - project_general = Project.get_general
     - if project_general
-      .block.inline.project_general{:style => "margin: 100px 0 100px 10%; width: 290px"}
+      .block.inline.project_general{:style => "margin: 100px 0 100px -100px; width: 290px"}
         .a-show-project{:target => project_general.id }
           %h1=project_general.title
           = image_tag project_general.project_images.first.image(:big)
@@ -20,25 +20,25 @@
 
   - projects = Project.all
   - if projects.present?
-    .sliders.block.images.scroll-block.right.projects#scroll3{:style => "margin: 0 8% 0 0;"}
+    .sliders.block.images.scroll-block.left.projects#scroll3{:style => "margin: 0 0 0 540px;"}
       %ul.cf
         - projects.each_with_index do |project,index|
-
-          %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
-            = image_tag project.project_images.first.image(:medium) if not project.project_images.blank?
-            %span=project.title
-            .more.cf
-              %a.item-close{:href => "#"} ×
-              .controls
-                .control.prev  <
-                .control.next >
-              .item-info
-                %h3= project.title
-                .content
-                  = raw project.content
-                .help-block
-                  %span
-                    = project.line_of_work.try(:title)
+          - 5.times do
+            %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
+              = image_tag project.project_images.first.image(:medium) if not project.project_images.blank?
+              %span=project.title
+              .more.cf
+                %a.item-close{:href => "#"} ×
+                .controls
+                  .control.prev  <
+                  .control.next >
+                .item-info
+                  %h3= project.title
+                  .content
+                    = raw project.content
+                  .help-block
+                    %span
+                      = project.line_of_work.try(:title)
 
 
 = render :partial => "footer"

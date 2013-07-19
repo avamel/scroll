@@ -194,10 +194,10 @@ $ ->
           "margin-top": 0
 
 
-    if $("#scroll3").offset().top <= 140 && $("#scroll3").offset().top >= 0 - $("#scroll3").height() + $("#summary3").height()
-      $("#summary3").addClass("absolute")
-    else
-      $("#summary3").removeClass("absolute")
+    # if $("#scroll3").offset().top <= 140 && $("#scroll3").offset().top >= 0 - $("#scroll3").height() + $("#summary3").height()
+    #   $("#summary3").addClass("absolute")
+    # else
+    #   $("#summary3").removeClass("absolute")
 
 
 

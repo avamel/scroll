@@ -8,6 +8,9 @@ class Project < ActiveRecord::Base
 
   after_save :break_other_general, :if => -> project { project.general }
 
+  validates :project_images, :length => { :minimum => 1 }
+
+
   def self.get_general
     where(:general => true).last
   end

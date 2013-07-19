@@ -1,4 +1,4 @@
-- line = StaticBlock.find_by_id 9
+- line = get_block("line")
 %a#s-line.d-scroll{ "down" => "line_of_work_1", "top" => "s-line"}
 - if line
   .cf
@@ -34,7 +34,7 @@
 
 
 %a#s-other_line.d-scroll{ "down" => "s-other_line", "top" => "line_of_work_#{line_of_work.last.id}" }
-- other_line = StaticBlock.find_by_id 10
+- other_line = get_block("other_line")
 - if other_line
   .cf
     .block.right.line_of_works{:style => "width: 55%; margin: 250px 5% 250px 0"}

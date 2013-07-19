@@ -54,7 +54,6 @@ body
 
 
 .container
-  // overflow: hidden
   height: 100%
   width: 100%
   position: absolute
@@ -148,7 +147,7 @@ article
 
 .main
   max-width: 1400px
-  min-width: 800px
+  min-width: 1024px
   position: relative
   margin: 0 auto
 
@@ -277,18 +276,6 @@ article
     left: 45%
 
 
-#section-0
-  background: url(/assets/section-1.jpg) no-repeat
-#section-1
-  background: url(/assets/section-2.jpg) no-repeat
-#section-2
-  background: url(/assets/section-2.jpg) no-repeat
-#section-3
-  background: url(/assets/section-3.jpg) no-repeat
-#section-4
-  background: url(/assets/section-4.jpg) no-repeat
-
-
 .section
   -webkit-background-size: cover!important
   -moz-background-size: cover!important
@@ -337,7 +324,7 @@ article
 
 .images
   width: 450px
-  margin: 0 13% 0 0
+  margin: 0 7% 0 0
   padding-top: 16px
   ul
     width: 500px
@@ -377,7 +364,7 @@ article
 
 .experts
   width: 480px
-  margin: 0
+  margin: 0 -40px 0 0
   ul
     li
       width: 100%
@@ -420,11 +407,13 @@ article
         background-color: #FFF
         padding: 0 0 40px 0
         color: #000
-        top: 22%
+        top: 20%
         left: 50%
         min-height: 140px
         z-index: 1
         cursor: default
+        max-height: 650px
+        overflow: auto
   .item-img
     float: left
     margin: 24px 0 0 14px
@@ -578,12 +567,12 @@ article
 
 
 
-// #summary3
-//   width: 350px!important
-//   left: 0!important
-//   position: static
-//   float: left
-//   margin-left: 33%!important
+#summary3
+  width: 350px!important
+  left: 0!important
+  position: absolute
+  float: left
+  margin-left: 180px
 
 
 
@@ -594,7 +583,9 @@ article
 
 .a-show-project
   cursor: pointer
-@media (max-width: 860px)
+@media (max-width: 1024px)
+  body
+    // overflow: auto
   .absolute
     position: static!important
   // .main
@@ -602,6 +593,7 @@ article
 
 
 
-
+iframe
+  margin: 16px 0
 
 

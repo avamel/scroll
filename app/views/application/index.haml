@@ -1,3 +1,20 @@
+:css
+  #section-0{
+   background: url(#{get_bg 'index'}) no-repeat;
+  }
+  #section-1{
+   background: url(#{get_bg 'company'}) no-repeat;
+  }
+  #section-2{
+   background: url(#{get_bg 'directions'}) no-repeat;
+  }
+  #section-3{
+   background: url(#{get_bg 'experience'}) no-repeat;
+  }
+  #section-4{
+   background: url(#{get_bg 'сontacts'}) no-repeat;
+  }
+
 .main
   #menu.cf
     %ul.m
@@ -14,7 +31,7 @@
 
     #slider-block
       #slider
-      - social = StaticBlock.find_by_id 4
+      - social = get_block("social")
       - if social
         #social-block
           #social
@@ -59,7 +76,6 @@
       .main
         .scroll
           = render :partial => "section-сontacts"
-
 
 
 
