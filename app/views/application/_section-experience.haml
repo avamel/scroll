@@ -1,4 +1,4 @@
-.cf{:style => "margin: 250px 0 150px 0"}
+.cf{:style => "margin: 250px 0 280px 0"}
   .left#summary3.sf{:target => "scroll3"}
     - experience = get_block("experience")
     - if experience
@@ -23,22 +23,21 @@
     .sliders.block.images.scroll-block.left.projects#scroll3{:style => "margin: 0 0 0 540px;"}
       %ul.cf
         - projects.each_with_index do |project,index|
-          - 5.times do
-            %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
-              = image_tag project.project_images.first.image(:medium) if not project.project_images.blank?
-              %span=project.title
-              .more.cf
-                %a.item-close{:href => "#"} ×
-                .controls
-                  .control.prev  <
-                  .control.next >
-                .item-info
-                  %h3= project.title
-                  .content
-                    = raw project.content
-                  .help-block
-                    %span
-                      = project.line_of_work.try(:title)
+          %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
+            = image_tag project.project_images.first.image(:medium) if not project.project_images.blank?
+            %span=project.title
+            .more.cf
+              %a.item-close{:href => "#"} ×
+              .controls
+                .control.prev  <
+                .control.next >
+              .item-info
+                %h3= project.title
+                .content
+                  = raw project.content
+                .help-block
+                  %span
+                    = project.line_of_work.try(:title)
 
 
 = render :partial => "footer"
