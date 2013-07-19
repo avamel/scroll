@@ -20,7 +20,7 @@
 
   - projects = Project.all
   - if projects.present?
-    .sliders.block.images.scroll-block.left.projects#scroll3{:style => "margin: 0 0 0 540px;"}
+    .sliders.block.images.scroll-block.left.projects#scroll3{:style => "margin: 0 0 0 565px;"}
       %ul.cf
         - projects.each_with_index do |project,index|
           %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
