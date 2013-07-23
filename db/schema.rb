@@ -101,17 +101,6 @@ ActiveRecord::Schema.define(:version => 20130719080930) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "project_images", :force => true do |t|
-    t.boolean  "general"
-    t.integer  "project_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "projects", :force => true do |t|
     t.string   "title"
     t.integer  "line_of_work_id"
@@ -119,6 +108,10 @@ ActiveRecord::Schema.define(:version => 20130719080930) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.text     "content"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "section_backgrounds", :force => true do |t|

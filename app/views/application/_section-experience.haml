@@ -12,7 +12,7 @@
       .block.inline.project_general{:style => "margin: 100px 0 100px -100px; width: 290px"}
         .a-show-project{:target => project_general.id }
           %h1=project_general.title
-          = image_tag project_general.project_images.first.image(:big)
+          = image_tag project_general.image(:big)
 
 
 
@@ -24,7 +24,7 @@
       %ul.cf
         - projects.each_with_index do |project,index|
           %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
-            = image_tag project.project_images.first.image(:medium) if not project.project_images.blank?
+            = image_tag project.image(:medium) if not project.image.blank?
             %span= truncate( project.title, :length => 20)
             .more.cf
               %a.item-close{:href => "#"} ×
