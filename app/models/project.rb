@@ -1,11 +1,12 @@
 class Project < ActiveRecord::Base
-  belongs_to :line_of_work
+  has_many :project_line_of_works
+  has_many :line_of_works, through: :project_line_of_works
 
   has_attached_file :image, :styles => { :big => "255x160^", :medium => "186x80^", :thumb => "100x100>" },
                     :convert_options => { :medium => " -gravity center -extent '186x80'",
                                           :big => " -compose Copy -gravity center -extent '255x160'"}
 
-  attr_accessible :general, :line_of_work_id, :title, :content, :image
+  attr_accessible :general, :line_of_work_ids, :title, :content, :image
 
   after_save :break_other_general, :if => -> project { project.general }
 

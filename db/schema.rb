@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130719080930) do
+ActiveRecord::Schema.define(:version => 20130724091112) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -101,12 +101,21 @@ ActiveRecord::Schema.define(:version => 20130719080930) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "projects", :force => true do |t|
-    t.string   "title"
+  create_table "project_line_of_works", :force => true do |t|
+    t.integer  "project_id"
     t.integer  "line_of_work_id"
-    t.boolean  "general"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  add_index "project_line_of_works", ["line_of_work_id"], :name => "index_project_line_of_works_on_line_of_work_id"
+  add_index "project_line_of_works", ["project_id"], :name => "index_project_line_of_works_on_project_id"
+
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.boolean  "general"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.text     "content"
     t.string   "image_file_name"
     t.string   "image_content_type"

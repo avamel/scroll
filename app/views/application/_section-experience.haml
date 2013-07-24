@@ -36,8 +36,8 @@
                 .content
                   = raw project.content
                 .help-block
-                  %span
-                    = link_to_function project.line_of_work.try(:title), "setWork('line_of_work_#{project.line_of_work.id}');"
+                  - project.line_of_works.each do |ln|
+                    %span= link_to_function ln.try(:title), "setWork('line_of_work_#{ln.id}');"
 
 
 = render :partial => "footer"

@@ -3,7 +3,7 @@ ActiveAdmin.register Project do
   index do
     column :id
     column :title
-    column :line_of_work
+    column(:line_of_works) { |project| raw project.line_of_works.map { |x| link_to x.title, admin_line_of_work_path(x.id) }.join(', ') }
     column :general
     column :image, sortable: :image_file_name do |project|
       image_tag project.image.url(:thumb)
@@ -16,7 +16,9 @@ ActiveAdmin.register Project do
     panel "Project" do
       attributes_table do
         row :title
-        row :line_of_work
+        row :line_of_works do
+          raw project.line_of_works.map { |x| link_to x.title, admin_line_of_work_path(x.id) }.join(', ')
+        end
         row :content
         row :general
       end
@@ -49,7 +51,7 @@ ActiveAdmin.register Project do
 
   form do |f|
     f.inputs "Project details" do
-      f.input :line_of_work
+      f.input :line_of_works, as: :check_boxes
       f.input :title
       f.input :content, as: :ckeditor
       f.input :general
