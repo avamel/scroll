@@ -206,6 +206,18 @@ $ ->
   $("#s0").click()
   $(".ui-slider-handle").addClass("ui0")
 
+@setWork = (id) ->
+  $("#s2").click()
+  $("#section-2 .scroll").scrollTo $("a##{id}"), 400,
+    axis: "y"
+
+#@setProject = (id) ->
+#  $("#s3").click()
+#  $("#section-3 .scroll").scrollTo $("a##{id}"), 400,
+#    axis: "y"
+
+
+
 @setBtnScroll = (top, down) ->
   $("#scroll-btn .up").attr("top",top)
   $("#scroll-btn .down").attr("down",down)

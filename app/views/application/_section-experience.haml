@@ -37,7 +37,7 @@
                   = raw project.content
                 .help-block
                   %span
-                    = project.line_of_work.try(:title)
+                    = link_to_function project.line_of_work.try(:title), "setWork('line_of_work_#{project.line_of_work.id}');"
 
 
 = render :partial => "footer"
