@@ -211,10 +211,9 @@ $ ->
   $("#section-2 .scroll").scrollTo $("a##{id}"), 400,
     axis: "y"
 
-#@setProject = (id) ->
-#  $("#s3").click()
-#  $("#section-3 .scroll").scrollTo $("a##{id}"), 400,
-#    axis: "y"
+@setProject = (id) ->
+  $("#s3").click()
+  $("#section-3 .cf li##{id}").click()
 
 
 

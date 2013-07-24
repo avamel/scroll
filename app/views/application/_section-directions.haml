@@ -28,7 +28,7 @@
                 = raw line.popup_content
                 .help-block
                   - line.projects.each do |pr|
-                    %span=pr.title
+                    %span= link_to_function pr.title, "setProject('project_#{pr.id}');"
 
 
 
