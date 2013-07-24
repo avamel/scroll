@@ -15,7 +15,7 @@
 %a#s-history.d-scroll{ "down" => "s-client", "top" => "s-welcome"}
 - if history
   .cf
-    .block{:style => "margin: 220px auto 140px; width: 60%; "}
+    .block{:style => "margin: 220px auto 260px; width: 60%; "}
       %h1= history.title
       = raw history.content
 
@@ -38,7 +38,7 @@
             %span=cl.title
 
 
-.cf{:style => "margin: 140px 0 140px 210px; width: 820px"}
+.cf{:style => "margin: 250px 0 140px 210px; width: 820px"}
   - expert = get_block("expert")
   - if expert
     .block.inline#summary2.sf{:style => "width: 320px", :target => "scroll2"}

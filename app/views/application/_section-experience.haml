@@ -24,7 +24,7 @@
       %ul.cf
         - projects.each_with_index do |project,index|
           %li.slide.a-show{ :id => "project_#{project.id}", :index => index  }
-            = image_tag project.image(:medium) if not project.image.blank?
+            = image_tag project.image(:medium), :class => "img" if not project.image.blank?
             %span= truncate( project.title, :length => 20)
             .more.cf
               %a.item-close{:href => "#"} ×

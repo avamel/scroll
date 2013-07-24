@@ -136,6 +136,7 @@ $ ->
       $li = $("#menu a[href='#section-#{ui.value}']").parent().addClass("active")
       $li.find("a").trigger('click')
 
+
   if hash == "#section-0" || hash == ""
     $(".ui-slider-handle").addClass("ui0")
 
@@ -146,6 +147,9 @@ $ ->
     $("html, body").scrollTo "#{pr}%", 400,
       axis: "x"
     setBtnScroll $($(this).attr("href")).find(".d-scroll").eq(0).attr("id"), $($(this).attr("href")).find(".d-scroll").eq(1).attr("id")
+    $(".scroll").scrollTop(0)
+    $(".slide").removeClass "active"
+
 
     if $(this).parent().index() > 0
       $(".ui-slider-handle").removeClass("ui0")
@@ -171,7 +175,7 @@ $ ->
 
 
 
-    if $("#scroll1").offset().top <= 140 && $("#scroll1").offset().top >= 0 - $("#scroll1").height() + $("#summary1").height() + 140
+    if $("#scroll1").offset().top <= 250 && $("#scroll1").offset().top >= 0 - $("#scroll1").height() + $("#summary1").height() + 140
       $("#summary1").addClass("absolute")
     else
       $("#summary1").removeClass("absolute")
@@ -208,8 +212,8 @@ $ ->
 
 @setWork = (id) ->
   $("#s2").click()
-  $("#section-2 .scroll").scrollTo $("a##{id}"), 400,
-    axis: "y"
+  $("#section-2 .scroll").scrollTo $("a##{id}"), 400, axis: "y"
+  $(".slide").removeClass "active"
 
 @setProject = (id) ->
   $("#s3").click()
