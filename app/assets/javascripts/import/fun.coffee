@@ -169,30 +169,34 @@ $ ->
 
   $(".scroll").scroll ->
 
-    # $(".sf").each ->
-    #   fixed = $(this)
-    #   scroll_target = $("##{fixed.attr('target')}")
 
 
 
-    if $("#scroll1").offset().top <= 250 && $("#scroll1").offset().top >= 0 - $("#scroll1").height() + $("#summary1").height() + 140
+    if $("#scroll1").offset().top <= 370  && $("#summary1").height() + 270 <= $("#scroll1").height() + $("#scroll1").offset().top
       $("#summary1").addClass("absolute")
     else
       $("#summary1").removeClass("absolute")
-      if $("#scroll1").offset().top < 0
+      if $("#scroll1").offset().top <= 370
         $("#summary1").css
-          "margin-top": $("#scroll1").height() - 140
+          "margin-top":$("#scroll1").height() - $("#summary1").height() + 100
       else
         $("#summary1").css
           "margin-top": 0
 
-    if $("#scroll2").offset().top <= 140 && $("#scroll2").offset().top >= 0 - $("#scroll2").height() + $("#summary2").height() + 140
+
+
+
+    $("#scroll2").attr("offset-top",$("#scroll2").offset().top)
+
+    $("#scroll2").attr("heightb",$("#scroll2").height())
+
+    if $("#scroll2").offset().top <= 440  && $("#summary2").height() + 270 <= $("#scroll2").height() + $("#scroll2").offset().top
       $("#summary2").addClass("absolute")
     else
       $("#summary2").removeClass("absolute")
-      if $("#scroll2").offset().top < 0
+      if $("#scroll2").offset().top <= 440
         $("#summary2").css
-          "margin-top": $("#scroll2").height() - 140
+          "margin-top":$("#scroll2").height() - $("#summary2").height() + 170
       else
         $("#summary2").css
           "margin-top": 0
