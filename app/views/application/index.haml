@@ -30,6 +30,7 @@
         %a.curtain-links#s4{:href => "#section-4"} Контакты
 
     #slider-block
+      = link_to_function "HR-Tema", "setHome();", :id => "logo"
       #slider
       - social = get_block("social")
       - if social
@@ -42,9 +43,6 @@
     %a.up{:href => "#up", :style => ""} <
     %a.down{:href => "#down"} >
 
-
-
-  = link_to_function "HR-Tema", "setHome();", :id => "logo"
 
 
 %ol.curtains
