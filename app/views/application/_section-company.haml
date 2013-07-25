@@ -3,7 +3,7 @@
 %a#s-welcome.d-scroll{ "down" => "s-history", "top" => "s-welcome"}
 - if welcome
   .cf
-    .block.left{:style => "margin: 107px 31px 0 24%; width: 188px; text-align: center"}
+    .block.left{:style => "margin: 107px 31px 0 308px; width: 188px; text-align: center"}
       %br
       = image_tag welcome.get_image.image(:big)
     .block.left{:style => "margin: 154px auto 140px; width: 436px;"}
@@ -15,14 +15,14 @@
 %a#s-history.d-scroll{ "down" => "s-client", "top" => "s-welcome"}
 - if history
   .cf
-    .block{:style => "margin: 220px auto 313px 15%; width: 687px; "}
+    .block{:style => "margin: 220px auto 313px 161px; width: 687px; "}
       %h1= history.title
       = raw history.content
 
 .cf{:style => "margin: 0 0 0 210px; width: 885px"}
   - client = get_block("client")
   - if client
-    .block.inline.summary#summary1.sf{:style => "margin: 0 0 0 75px; width: 211px", :target => "scroll1" }
+    .block.inline.summary#summary1.sf{:style => "margin: 0 0 0 26px; width: 211px", :target => "scroll1" }
       %h1=client.title
       = raw client.content
 
@@ -38,7 +38,7 @@
             %span=cl.title
 
 
-.cf{:style => "margin: 239px 0 140px 290px; width: 820px"}
+.cf{:style => "margin: 239px 0 140px 239px; width: 807px"}
   - expert = get_block("expert")
   - if expert
     .block.inline#summary2.sf{:style => "width: 341px", :target => "scroll2"}
