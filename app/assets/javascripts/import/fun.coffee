@@ -190,11 +190,11 @@ $ ->
 
     $("#scroll2").attr("heightb",$("#scroll2").height())
 
-    if $("#scroll2").offset().top <= 440  && $("#summary2").height() + 270 <= $("#scroll2").height() + $("#scroll2").offset().top
+    if $("#scroll2").offset().top <= 450  && $("#summary2").height() + 270 <= $("#scroll2").height() + $("#scroll2").offset().top
       $("#summary2").addClass("absolute")
     else
       $("#summary2").removeClass("absolute")
-      if $("#scroll2").offset().top <= 440
+      if $("#scroll2").offset().top <= 450
         $("#summary2").css
           "margin-top":$("#scroll2").height() - $("#summary2").height() + 170
       else
